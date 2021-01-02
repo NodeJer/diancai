@@ -3,9 +3,16 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
   <title>点菜宝贝</title>
   <link href="https://lib.baomitu.com/normalize/4.2.0/normalize.css" rel="stylesheet">
   <link rel="stylesheet" href="css/index.css">
+  <script src="http://cdn.bootcss.com/jquery/1.7/jquery.min.js"></script>
+  <style>
+    .container .main form .field input,.container .main form .phone .btn {
+      behavior: url(PIE.htc);
+    }
+  </style>
 </head>
 <body>
 <div class="container">
@@ -52,5 +59,29 @@
     Copyright @ 2017 点菜宝贝 Diancai Baobei.com All Rights Reserved.
   </div>
 </div>
+<!--[if lt IE 10]>
+<script>
+  function iePlaceholder(){
+    $("input").each(function(){
+      if($(this).val() == "" && $(this).attr("placeholder") != ""){
+        $(this).val($(this).attr("placeholder"));
+        $(this).focus(function(){
+          if($(this).val() == $(this).attr("placeholder")){
+            $(this).val("");
+          }
+        });
+        $(this).blur(function(){
+          if($(this).val() == ""){
+            $(this).val($(this).attr("placeholder"));
+          }
+        });
+      }
+    });
+  }
+  $(document).ready(function() {
+    iePlaceholder();
+  });
+</script>
+<![endif]-->
 </body>
 </html>
