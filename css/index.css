@@ -3,12 +3,11 @@ body, html {
 }
 
 .container {
-	position : relative;
-	width    : 1280px;
-	height   : 100%;
-	margin   : auto;
-	padding  : 0 58px;
-	box-sizing: border-box;
+	position  : relative;
+	max-width : 1280px;
+	height    : 100%;
+	margin    : auto;
+	padding   : 0 54px;
 }
 
 .container .header {
@@ -55,15 +54,24 @@ body, html {
 	background : linear-gradient(-180deg, #FFE69D 0%, #FFC00A 100%);
 	filter     : progid:DXImageTransform.Microsoft.Gradient(startColorStr=#FFE69D, endColorStr=#FFC00A);
 }
-
+@media screen and (min-height : 720px) {
+	.container .main {
+		position       : absolute;
+		left           : 0;
+		right          : 0;
+		top            : 134px;
+		bottom         : 76px;
+	}
+}
 .container .main {
-	position       : absolute;
+	/*position       : absolute;
 	left           : 0;
 	right          : 0;
 	top            : 134px;
-	bottom         : 76px;
+	bottom         : 76px;*/
 	text-align     : center;
 	vertical-align : middle;
+	padding        : 20px 0;
 }
 
 .container .main:after {
@@ -160,11 +168,20 @@ body, html {
 	margin-left   : 76px;
 }
 
+@media screen and (min-height : 720px) {
+	.container .footer {
+		position : absolute;
+		bottom   : 0;
+		left     : 54px;
+		right    : 54px;
+	}
+}
+
 .container .footer {
-	position   : absolute;
+	/*position   : absolute;
 	bottom     : 0;
 	left       : 58px;
-	right      : 58px;
+	right      : 58px;*/
 	padding    : 25px 0 34px 0;
 	text-align : center;
 	font-size  : 14px;
